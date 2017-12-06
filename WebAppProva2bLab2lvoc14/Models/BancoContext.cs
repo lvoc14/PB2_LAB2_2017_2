@@ -16,8 +16,10 @@ namespace WebAppProva2bLab2lvoc14.Models
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
             //Mapenado a classe Conta propriedade DateTime para DateTime2 
-            modelBuilder.Entity<Conta>()
-             .Property(s => s.DataAbertura)
-             .HasColumnType("datetime2");        }
+            modelBuilder.Entity<Conta>().Property(s => s.DataAbertura).HasColumnType("datetime2");
+            //Mapeando  as classes que possuem propriedade do tipo string para varchar(200)
+            modelBuilder.Properties<string>().Configure(p => p.HasColumnType ("varchar(200)"));
+            //Mapeando o processo CUD
+            modelBuilder.Types().Configure(t => t.MapToStoredProcedures());        }
     }
 }
