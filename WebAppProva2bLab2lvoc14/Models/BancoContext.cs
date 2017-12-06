@@ -15,8 +15,9 @@ namespace WebAppProva2bLab2lvoc14.Models
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
-            //Mapenado todas as classes datatime
-            molderbuilder.properties<DateTime>.configure(p => p.HasMaxLength(200));
-        }
+            //Mapenado a classe Conta propriedade DateTime para DateTime2 
+            modelBuilder.Entity<Conta>()
+             .Property(s => s.DataAbertura)
+             .HasColumnType("datetime2");        }
     }
 }
