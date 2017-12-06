@@ -8,7 +8,14 @@ using System.Web;
 namespace WebAppProva2bLab2lvoc14.Models
 {
     public class BancoContext:DbContext
+
     {
+        public DbSet<Endereco> Endereco { get; set; }
+        public DbSet<Conta> Conta { get; set; }
+        public DbSet<Pessoa> Pessoa { get; set; }
+        public DbSet<TipoConta> TipoConta { get; set; }
+        public DbSet<Movimentacao> Movimentacao { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //Removendo as convençõpes de puralidade um para muitos e muitos para muitos
