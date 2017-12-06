@@ -10,6 +10,6 @@ namespace WebAppProva2bLab2lvoc14.Models
         public int MovimentacaoId { get; set; }
         public DateTime DataMovimentacao { get; set; }
         public decimal Valor { get; set; }
-        public Conta Contas { get; set; }
+        public List<Conta> Conta { get; set; }
     }
 }

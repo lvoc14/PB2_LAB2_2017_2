@@ -12,6 +12,7 @@ namespace WebAppProva2bLab2lvoc14.Models
         public string Bairro { get; set; }
         public string CEP { get; set; }
         public string Numero { get; set; }
+        public Pessoa Pessoa { get; set; }
 
 
     }
